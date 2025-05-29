@@ -19,3 +19,9 @@ class CleanerData:
         
         return df
     
+    @staticmethod
+    def convert_columns_to_specified_type(df, origin, dtype): 
+        for col in df.columns: 
+            if df[col].dtype == origin: df[col] = df[col].astype(dtype)
+
+        return df
